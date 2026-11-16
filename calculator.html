@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Calculator</title>
+<style>
+body{background:#111;color:white;text-align:center;font-family:Arial}
+.calc{background:#222;width:280px;margin:30px auto;padding:20px;border-radius:15px}
+#result{width:90%;padding:15px;font-size:22px;text-align:right;border-radius:10px;border:none}
+button{width:60px;height:50px;margin:5px;font-size:20px;border-radius:10px;border:none;background:#333;color:white}
+button:hover{background:#00e676;color:black}
+</style>
+</head>
+<body>
+<h1 style="color:#00e676">My Calculator</h1>
+<div class="calc">
+<input id="result" readonly>
+<br><br>
+<button onclick="add('7')">7</button>
+<button onclick="add('8')">8</button>
+<button onclick="add('9')">9</button>
+<button onclick="add('/')">/</button><br>
+<button onclick="add('4')">4</button>
+<button onclick="add('5')">5</button>
+<button onclick="add('6')">6</button>
+<button onclick="add('*')">x</button><br>
+<button onclick="add('1')">1</button>
+<button onclick="add('2')">2</button>
+<button onclick="add('3')">3</button>
+<button onclick="add('-')">-</button><br>
+<button onclick="add('0')">0</button>
+<button onclick="add('.')">.</button>
+<button onclick="calc()">=</button>
+<button onclick="add('+')">+</button><br>
+<button onclick="clearAll()" style="width:240px;background:red">CLEAR</button>
+</div>
+<br>
+<a href="index.html" style="color:#00e676">Back to Home</a>
+<script>
+function add(v){document.getElementById('result').value+=v}
+function calc(){let r=document.getElementById('result');r.value=eval(r.value)}
+function clearAll(){document.getElementById('result').value=''}
+</script>
+</body>
+</html>
