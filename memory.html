@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Memory Game - By Aditya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { background: #0a0a0a; color: white; font-family: Arial; text-align: center; padding: 10px; }
+h1 { color: #00ff88; }
+h2 { color: #ffcc00; }
+.board { display: grid; grid-template-columns: repeat(4, 75px); gap: 10px; justify-content: center; margin: 20px auto; }
+.card { width: 75px; height: 75px; background: #1a1a1a; border: 2px solid #333; border-radius: 12px; font-size: 38px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.card.open { background: #222; border-color: #00ff88; }
+.card.matched { background: #00ff88; border-color: #00ff88; }
+button { background: #00ff88; color: black; border: none; padding: 12px 30px; font-size: 18px; border-radius: 30px; font-weight: bold; margin: 10px; }
+a { color: #00ff88; text-decoration: none; display: block; margin-top: 15px; }
+</style>
+</head>
+<body>
+
+<h1>🧠 Memory Game</h1>
+<p>Made by Aditya 🔥</p>
+<h2 id="status">Jodi Milao! Moves: 0</h2>
+
+<div class="board" id="board"></div>
+
+<button onclick="startGame()">🔄 Dobara Khelo</button>
+<a href="portfolio.html">⬅️ Wapas Portfolio Pe Jao</a>
+
+<script>
+let emojis = ["🍕","🍕","🐍","🐍","🔥","🔥","⭐","⭐","🎮","🎮","❤️","❤️","🚀","🚀","🍩","🍩"];
+let first = null, second = null, lock = false, moves = 0, matched = 0;
+
+function startGame(){
+  emojis = emojis.sort(()=>Math.random()-0.5);
+  let board = document.getElementById("board");
+  board.innerHTML = "";
+  first=null; second=null; lock=false; moves=0; matched=0;
+  document.getElementById("status").innerHTML = "Jodi Milao! Moves: 0";
+  emojis.forEach((e)=>{
+    let div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = "❓";
+    div.dataset.emoji = e;
+    div.onclick = ()=> flip(div);
+    board.appendChild(div);
+  });
+}
+function flip(card){
+  if(lock || card.classList.contains("open") || card.classList.contains("matched")) return;
+  card.innerHTML = card.dataset.emoji;
+  card.classList.add("open");
+  if(!first){ first = card; return; }
+  second = card; moves++;
+  document.getElementById("status").innerHTML = "Jodi Milao! Moves: "+moves;
+  if(first.dataset.emoji == second.dataset.emoji){
+    first.classList.add("matched"); second.classList.add("matched");
+    first=null; second=null; matched+=2;
+    if(matched==16){
+      document.getElementById("status").innerHTML = "🎉 Jeet Gaye! Tumne "+moves+" Moves me kiya! 🎉";
+    }
+  } else {
+    lock = true;
+    setTimeout(()=>{
+      first.innerHTML="❓"; second.innerHTML="❓";
+      first.classList.remove("open"); second.classList.remove("open");
+      first=null; second=null; lock=false;
+    }, 700);
+  }
+}
+startGame();
+</script>
+</body>
+</html>
