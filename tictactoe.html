@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tic Tac Toe - By Aditya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { background: #0a0a0a; color: white; font-family: Arial; text-align: center; padding: 15px; }
+h1 { color: #00ff88; }
+h2 { color: #ffcc00; }
+.board { display: grid; grid-template-columns: repeat(3, 100px); gap: 10px; justify-content: center; margin: 20px auto; }
+.cell { width: 100px; height: 100px; background: #1a1a1a; border: 2px solid #333; border-radius: 15px; font-size: 55px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.cell:hover { background: #222; }
+button { background: #00ff88; color: black; border: none; padding: 12px 30px; font-size: 18px; border-radius: 30px; font-weight: bold; margin: 10px; }
+a { color: #00ff88; text-decoration: none; display: block; margin-top: 15px; }
+</style>
+</head>
+<body>
+
+<h1>❌ Tic Tac Toe ⭕</h1>
+<p>Made by Aditya 🔥</p>
+<h2 id="status">Bari: X ki</h2>
+
+<div class="board">
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+<div class="cell" onclick="play(this)"></div>
+</div>
+
+<button onclick="location.reload()">🔄 Dobara Khelo</button>
+<a href="portfolio.html">⬅️ Wapas Portfolio Pe Jao</a>
+
+<script>
+let turn = "X";
+let over = false;
+function play(cell){
+  if(cell.innerHTML != "" || over) return;
+  cell.innerHTML = turn;
+  cell.style.color = turn == "X" ? "#00ff88" : "#ffcc00";
+  checkWinner();
+  if(!over){
+    turn = turn == "X" ? "O" : "X";
+    document.getElementById("status").innerHTML = "Bari: " + turn + " ki";
+  }
+}
+function checkWinner(){
+  let c = document.querySelectorAll(".cell");
+  let win = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  for(let w of win){
+    if(c[w[0]].innerHTML != "" && c[w[0]].innerHTML == c[w[1]].innerHTML && c[w[1]].innerHTML == c[w[2]].innerHTML){
+      document.getElementById("status").innerHTML = "🎉 " + turn + " Jeet Gaya! 🎉";
+      over = true;
+      return;
+    }
+  }
+  let full = true;
+  for(let x of c){ if(x.innerHTML == "") full = false; }
+  if(full){ document.getElementById("status").innerHTML = "🤝 Draw Ho Gaya!"; over = true; }
+}
+</script>
+
+</body>
+</html>
