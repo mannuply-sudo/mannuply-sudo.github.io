@@ -3,49 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya | Web Developer - Delhi</title>
+<title>Aditya - Web Developer</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f0f0f;color:#fff;padding-bottom:20px}
-.top{background:#111;padding:25px 20px;text-align:center;border-bottom:2px solid #00d4ff}
-.top img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid #00d4ff}
-.top h1{font-size:32px;color:#00d4ff;margin-top:10px}
-.top p{color:#ccc;margin-top:5px}
-.hero{background:linear-gradient(135deg,#00d4ff,#007bff);padding:35px 20px;text-align:center;color:#fff}
-.hero h2{font-size:26px}
-.hero p{margin:10px 0 20px}
-.btn{display:inline-block;background:#111;color:#fff;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:bold;margin:5px}
-.btn-green{background:#25D366}
-.box{background:#1a1a1a;margin:15px;padding:20px;border-radius:15px}
-.box h3{margin-bottom:12px;color:#00d4ff}
-.project{background:#222;padding:15px;border-radius:10px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
-.project a{color:#00d4ff;text-decoration:none;font-weight:bold}
-.service{border-bottom:1px solid #333;padding:12px 0;display:flex;justify-content:space-between;gap:10px}
-.price{color:#00d4ff;font-weight:bold;white-space:nowrap}
-.contact-box{background:#25D366;margin:15px;padding:25px;border-radius:15px;text-align:center;color:#fff}
-.contact-box h3{font-size:22px}
-.contact-box p{font-size:18px;margin:10px 0}
-.contact-box a{background:#fff;color:#111;padding:12px 25px;border-radius:30px;display:inline-block;text-decoration:none;font-weight:bold;margin-top:10px}
-.footer{text-align:center;padding:20px;color:#888;font-size:14px}
+body{background:#f8fafc;color:#111}
+.top{background:#0f172a;color:white;padding:40px 20px;text-align:center}
+.top h1{font-size:42px;letter-spacing:2px}
+.top h2{color:#22c55e;font-size:22px;margin:10px 0}
+.top p{color:#cbd5e1}
+.btn{display:inline-block;background:#22c55e;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin:8px 5px}
+.btn2{background:#1e293b}
+.box{padding:20px;max-width:800px;margin:auto}
+.card{background:white;padding:18px;border-radius:12px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.card h3{margin-bottom:6px}
+.card p{color:#555;font-size:14px}
+.view{color:#16a34a;font-weight:bold;text-decoration:none}
+.price{font-size:26px;font-weight:bold}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.small{background:white;padding:14px;border-radius:10px;text-align:center}
+.footer{text-align:center;padding:20px;color:#666}
 </style>
 </head>
 <body>
-<div class="top"><img src="IMG-20261027-WA0000(11).jpg" alt="Aditya"><h1>👨‍💻 ADITYA</h1><p>Web Developer Fresher | Delhi, India</p><p>📞 9311421226</p></div>
-<div class="hero"><h2>I Build Fast & Modern Websites</h2><p>HTML • CSS • JavaScript<br>Business Website • Portfolio • Shop Website</p><a class="btn" href="tel:9311421226">📞 Call Me</a><a class="btn btn-green" href="https://wa.me/919311421226">WhatsApp Me</a></div>
-<div class="box"><h3>🚀 My Projects - Live Demo</h3>
-<div class="project"><span>🛒 Jalwayu Kirana Store</span><a href="https://mannuply-sudo.github.io/jalwayu-kirana-store/">View →</a></div>
-<div class="project"><span>🐍 Snake Game</span><a href="snake.html">View →</a></div>
-<div class="project"><span>🧠 Memory Game</span><a href="memory.html">View →</a></div>
-<div class="project"><span>❌⭕ Tic Tac Toe</span><a href="tictactoe.html">View →</a></div>
-<div class="project"><span>✅ To-Do App</span><a href="todo.html">View →</a></div>
+<div class="top">
+<h1>ADITYA</h1>
+<h2>Web Developer</h2>
+<p>I Build Fast & Modern Websites</p>
+<p style="margin-top:10px">Fresher | Based in Delhi | Available for Work</p>
+<a class="btn" href="#work">View My Work</a>
+<a class="btn btn2" href="https://wa.me/919876543210">WhatsApp Me</a>
 </div>
-<div class="box"><h3>💼 Website Banwani Hai? Price</h3>
-<div class="service"><span>🌐 Business Website (1 Page)</span><b class="price">₹999 se</b></div>
-<div class="service"><span>🏪 Shop / Dukaan Website</span><b class="price">₹1499 se</b></div>
-<div class="service"><span>👨‍💻 Personal Portfolio</span><b class="price">₹799 se</b></div>
-<div class="service"><span>🛒 Full Website (5 Page)</span><b class="price">₹2999 se</b></div>
+
+<div class="box" id="work">
+<h2>My Projects</h2><br>
+<div class="card"><h3>🛒 Jalwayu Kirana Store</h3><p>Small business website for local kirana store.</p><br><a class="view" href="https://mannuply-sudo.github.io/jalwayu-kirana-store/">View →</a></div>
+<div class="card"><h3>🐍 Snake Game</h3><p>Classic snake game built with HTML, CSS & JavaScript.</p><br><a class="view" href="#">View →</a></div>
+<div class="card"><h3>🧠 Memory Game</h3><p>Fun memory matching game for all ages.</p><br><a class="view" href="#">View →</a></div>
+
+<h2 style="margin-top:25px">My Services & Price List</h2><br>
+<div class="card"><h3>Landing Page</h3><p class="price">₹999</p><p>Perfect for small business & personal brand.</p></div>
+<div class="card"><h3>Portfolio Website</h3><p class="price">₹1,999</p><p>Showcase your work & skills professionally.</p></div>
+<div class="card"><h3>Small Business Website</h3><p class="price">₹2,999</p><p>Complete website for your shop or business.</p></div>
+
+<h2 style="margin-top:25px">Why Choose Me?</h2><br>
+<div class="grid">
+<div class="small">⚡<br><b>Fast Delivery</b></div>
+<div class="small">🎨<br><b>Clean Design</b></div>
+<div class="small">💰<br><b>Affordable Prices</b></div>
+<div class="small">📱<br><b>Mobile Friendly</b></div>
 </div>
-<div class="contact-box"><h3>Website Banwane Ke Liye</h3><p>Contact Me On WhatsApp Below 👇</p><h2>9311421226</h2><a href="https://wa.me/919311421226">💬 WhatsApp Pe Message Karo</a></div>
-<div class="footer"><p>Aditya - Web Developer © 2026<br>Made with ❤️ in Delhi</p></div>
+
+<h2 style="margin-top:25px">Contact Me</h2><br>
+<div class="card"><p>Have a project in mind? Let's build it together.</p><br>
+<a class="btn" href="https://wa.me/919876543210">WhatsApp Me</a>
+<a class="btn btn2" href="mailto:aditya@example.com">Email Me</a></div>
+</div>
+<div class="footer">© 2026 Aditya - Web Developer | Delhi, India</div>
 </body>
 </html>
